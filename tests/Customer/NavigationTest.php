@@ -3,8 +3,6 @@
 namespace MyTests\Customer;
 
 use Magium\Magento\AbstractMagentoTestCase;
-use Magium\Magento\Actions\Customer\NavigateAndLogin;
-use Magium\Magento\Navigators\Customer\Account;
 use Magium\Magento\Navigators\Customer\AccountHome;
 
 class NavigationTest extends AbstractMagentoTestCase
