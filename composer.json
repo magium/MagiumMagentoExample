@@ -1,0 +1,17 @@
+{
+  "name": "magium/magium_magento_example",
+  "description": "This is an example testing project that you can use to start building Magium tests on Magento",
+  "minimum-stability": "stable",
+  "license": "ASL-2.0",
+  "authors": [
+    {
+      "name": "Kevin Schroeder",
+      "email": "kschroeder@mirageworks.com",
+      "homepage": "http://magiumlib.com/",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "magium/magento": "0.0.22-2.0"
+  }
+}
