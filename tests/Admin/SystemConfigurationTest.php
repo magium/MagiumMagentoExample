@@ -4,6 +4,7 @@ namespace MyTests\Admin;
 
 use Magium\Magento\AbstractMagentoTestCase;
 use Magium\Magento\Actions\Admin\Login\Login;
+use Magium\Magento\Navigators\Admin\AdminMenu;
 use Magium\Magento\Navigators\Admin\SystemConfiguration;
 
 class SystemConfigurationTest extends AbstractMagentoTestCase
@@ -17,6 +18,7 @@ class SystemConfigurationTest extends AbstractMagentoTestCase
     public function testGetCheckoutType()
     {
         $this->getAction(Login::ACTION)->login();
+        $this->getNavigator(AdminMenu::NAVIGATOR)->navigateTo('System/Configuration');
         $this->getNavigator(SystemConfiguration::NAVIGATOR)->navigateTo('Checkout/Checkout Options');
         self::assertEquals(1, $this->byId('checkout_options_onepage_checkout_enabled')->getAttribute('value'));
     }

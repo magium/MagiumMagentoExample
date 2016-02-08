@@ -61,7 +61,13 @@ class BasicNavigationTest extends AbstractMagentoTestCase
     /**
      * This test ensures that the product navigator is working with the default category for simple products.  If this test fails
      * you will need to make changes to the $this->defaultSimpleProductName property in the file
-     * {projectRoot}/configuration/Magium/Magento/Themes/{MagentoVersion}/ThemeConfiguration.php
+     * {projectRoot}/configuration/Magium/Magento/Themes/{MagentoVersion}/ThemeConfiguration.php.
+     *
+     * Another problem could be that the Xpath for your product name is slightly different from the default theme.
+     * There are two ways around that issue.  The first is to use $this->byText('My product title') from within the
+     * test case.  This is not ideal because it's not really re-usable.  A better option would be to modify the property
+     * $this->categorySpecificProductPageXpath to match the Xpath on your category page in the file
+     * {projectRoot}/configuration/Magium/Magento/Themes/{MagentoVersion}/ThemeConfiguration.php.
      */
 
     public function testDefaultProductNavigationSucceeds()
