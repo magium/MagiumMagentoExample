@@ -13,5 +13,10 @@
   ],
   "require": {
     "magium/magento": "0.0.22-2.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "MyTests\\": "tests"
+    }
   }
 }
