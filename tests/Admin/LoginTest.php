@@ -18,6 +18,7 @@ class LoginTest extends AbstractMagentoTestCase
 
     public function testLogin()
     {
+        $this->getLogger()->notice('Testing administrative login', ['type' => 'summary']);
         $this->getAction(Login::ACTION)->login();
     }
 

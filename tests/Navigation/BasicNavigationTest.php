@@ -72,6 +72,7 @@ class BasicNavigationTest extends AbstractMagentoTestCase
 
     public function testDefaultProductNavigationSucceeds()
     {
+        $this->getLogger()->notice('Testing default category and product navigation');
         $theme = $this->getTheme();
         $this->commandOpen($theme->getBaseUrl());
 

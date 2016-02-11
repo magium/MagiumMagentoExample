@@ -17,6 +17,7 @@ class LoggedInTest extends AbstractMagentoTestCase
 
     public function testNavigateAndLogin()
     {
+        $this->getLogger()->notice('Testing default customer authentication');
         $this->commandOpen($this->getTheme()->getBaseUrl());
         $this->getAction(NavigateAndLogin::ACTION)->login();
     }

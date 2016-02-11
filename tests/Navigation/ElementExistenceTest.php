@@ -16,6 +16,7 @@ class ElementExistenceTest extends AbstractMagentoTestCase
 
     public function testHomeLinkElementExists()
     {
+        $this->getLogger()->notice('Testing home page link existence');
         $theme = $this->getTheme();
         $this->commandOpen($theme->getBaseUrl());
         $title = $this->webdriver->getTitle();
@@ -38,6 +39,7 @@ class ElementExistenceTest extends AbstractMagentoTestCase
 
     public function testNavigationBaseExists()
     {
+        $this->getLogger()->notice('Testing that the base navigation element exists');
         $theme = $this->getTheme();
         $this->commandOpen($theme->getBaseUrl());
         $this->assertElementDisplayed($theme->getNavigationBaseXPathSelector(), WebDriver::BY_XPATH);
@@ -52,6 +54,7 @@ class ElementExistenceTest extends AbstractMagentoTestCase
 
     public function testBaseCheckoutNavigationInstructionExists()
     {
+        $this->getLogger()->notice('Testing that the base checkout navigation instruction exists');
         $theme = $this->getTheme();
         $this->commandOpen($theme->getBaseUrl());
 
@@ -69,6 +72,7 @@ class ElementExistenceTest extends AbstractMagentoTestCase
 
     public function testInitialCustomerNavigationInstructionExists()
     {
+        $this->getLogger()->notice('Testing that the base customer navigation element exists');
         $theme = $this->getTheme();
         $this->commandOpen($theme->getBaseUrl());
 
@@ -87,6 +91,7 @@ class ElementExistenceTest extends AbstractMagentoTestCase
 
     public function testPageLoadedSuccessfullyElementExists()
     {
+        $this->getLogger()->notice('Testing that the "guaranteed page loaded" element exists');
         $theme = $this->getTheme();
         $this->commandOpen($theme->getBaseUrl());
         $this->assertElementDisplayed($theme->getGuaranteedPageLoadedElementDisplayedXpath(), WebDriver::BY_XPATH);

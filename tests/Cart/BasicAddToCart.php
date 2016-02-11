@@ -24,6 +24,7 @@ class BasicAddToCart extends AbstractMagentoTestCase
 
     public function testDefaultAddToCartFullBatch()
     {
+        $this->getLogger()->notice('Testing add-to-cart functionality with defaults');
         $this->commandOpen($this->getTheme()->getBaseUrl());
         $this->getAction(AddItemToCart::ACTION)->addSimpleItemToCartFromProductPage();
     }
@@ -34,6 +35,7 @@ class BasicAddToCart extends AbstractMagentoTestCase
 
     public function testDefaultAddToCartFullInStages()
     {
+        $this->getLogger()->notice('Testing add-to-cart functionality with individual actions');
         $this->commandOpen($this->getTheme()->getBaseUrl());
         $this->getNavigator(DefaultSimpleProductCategory::NAVIGATOR)->navigateTo();
         $this->getNavigator(DefaultSimpleProduct::NAVIGATOR)->navigateTo();

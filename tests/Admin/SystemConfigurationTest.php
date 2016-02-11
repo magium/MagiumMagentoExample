@@ -17,6 +17,7 @@ class SystemConfigurationTest extends AbstractMagentoTestCase
 
     public function testGetCheckoutType()
     {
+        $this->getLogger()->notice('Testing System Configuration navigation');
         $this->getAction(Login::ACTION)->login();
         $this->getNavigator(AdminMenu::NAVIGATOR)->navigateTo('System/Configuration');
         $this->getNavigator(SystemConfiguration::NAVIGATOR)->navigateTo('Checkout/Checkout Options');

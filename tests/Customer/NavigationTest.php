@@ -17,6 +17,7 @@ class NavigationTest extends AbstractMagentoTestCase
 
     public function testNavigateToLogin()
     {
+        $this->getLogger()->notice('Testing account login navigation instructions');
         $this->commandOpen($this->getTheme()->getBaseUrl());
         $this->getNavigator(AccountHome::NAVIGATOR)->navigateTo();
     }
