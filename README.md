@@ -15,6 +15,8 @@ This should be enough for some basic smoke tests, and enough to get you started 
 
 Each tests is documented with some of the options that you may need to change in order to make it work with your implementation.  In addition, most value changes, and all files, are already included in the /configuration directory.
 
+You will need to run `composer update` prior to running any of the tests.
+
 ## Typical Problems
 
 ### Navigation
