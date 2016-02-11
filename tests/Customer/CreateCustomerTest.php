@@ -20,6 +20,7 @@ class CreateCustomerTest extends AbstractMagentoTestCase
 
     public function testNavigateAndLogin()
     {
+        $this->getLogger()->notice('Testing account registration');
         $this->commandOpen($this->getTheme()->getBaseUrl());
         $this->getIdentity()->generateUniqueEmailAddress();
         $this->getAction(Register::ACTION)->register();
