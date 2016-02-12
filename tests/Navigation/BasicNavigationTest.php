@@ -22,6 +22,7 @@ class BasicNavigationTest extends AbstractMagentoTestCase
 
     public function testSpecificCategoryNavigationSucceeds()
     {
+        $this->getLogger()->notice('Testing specific category navigator');
         $theme = $this->getTheme();
         $this->commandOpen($theme->getBaseUrl());
 
@@ -37,6 +38,7 @@ class BasicNavigationTest extends AbstractMagentoTestCase
 
     public function testSpecificProductNavigationSucceeds()
     {
+        $this->getLogger()->notice('Testing specific product navigator');
         $theme = $this->getTheme();
         $this->commandOpen($theme->getBaseUrl());
         $this->getNavigator(BaseMenu::NAVIGATOR)->navigateTo($this->categoryNavigation);
@@ -52,6 +54,7 @@ class BasicNavigationTest extends AbstractMagentoTestCase
 
     public function testDefaultCategoryNavigationSucceeds()
     {
+        $this->getLogger()->notice('Testing simple product navigator');
         $theme = $this->getTheme();
         $this->commandOpen($theme->getBaseUrl());
 
