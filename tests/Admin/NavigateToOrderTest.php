@@ -16,7 +16,7 @@ class NavigateToOrderTest extends AbstractMagentoTestCase
 
     public function testOrderPageAccessible()
     {
-        $this->getLogger()->notice('Testing navigation to orders page');
+        $this->getLogger()->notice('Testing navigation to admin orders page');
         $this->getAction(Login::ACTION)->login();
         $this->getNavigator(AdminMenu::NAVIGATOR)->navigateTo('Sales/Orders');
     }
