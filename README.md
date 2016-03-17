@@ -2,6 +2,8 @@
 
 This is the same (or similar) code that is used with the [Magium Quick Start](http://www.magiumlib.com/quickstart).  It's purpose is to give you a head start when creating Magium tests.
 
+[Find much more information at magiumlib.com](http://www.magiumlib.com/?utm_source=github&utm_medium=website&utm_campaign=social)
+
 One of the big problems that many useful, but ultimately failed, projects is that they require you to really get to know the software before you can start being useful.  But I believe that the best way of using software is to start with small wins.  When trying out new software, the longer it takes to have even minimal success, the less likely that software will be used in the long run.  This quick start gives you a starting point where just over a dozen Selenium tests are written to work with your Magento installation.
 
 The net effect of this is that you should, within a few minutes of downloading this, be able to
