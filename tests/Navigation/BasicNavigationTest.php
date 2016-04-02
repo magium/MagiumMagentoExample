@@ -15,6 +15,17 @@ class BasicNavigationTest extends AbstractMagentoTestCase
     protected $productName = 'Blue Horizons Bracelets';
 
     /**
+     * This method exists so that the category and product names can be overridden by custom logic without making
+     * changes to the test as a whole.  Each test method will call this method prior to requiring the category
+     * and product information.
+     */
+
+    protected function overrideDefaultConfiguration()
+    {
+
+    }
+
+    /**
      * This test ensures that the category navigator is working when providing a specific value.  If this test fails
      * you will need to make changes to the $this->navigationBaseXPathSelector and $this->navigationChildXPathSelector
      * properties in the file {projectRoot}/configuration/Magium/Magento/Themes/{MagentoVersion}/ThemeConfiguration.php
@@ -26,6 +37,7 @@ class BasicNavigationTest extends AbstractMagentoTestCase
         $theme = $this->getTheme();
         $this->commandOpen($theme->getBaseUrl());
 
+        $this->overrideDefaultConfiguration();
         $this->getNavigator(BaseMenu::NAVIGATOR)->navigateTo($this->categoryNavigation);
     }
 
@@ -41,6 +53,8 @@ class BasicNavigationTest extends AbstractMagentoTestCase
         $this->getLogger()->notice('Testing specific product navigator');
         $theme = $this->getTheme();
         $this->commandOpen($theme->getBaseUrl());
+
+        $this->overrideDefaultConfiguration();
         $this->getNavigator(BaseMenu::NAVIGATOR)->navigateTo($this->categoryNavigation);
         $this->getNavigator(Product::NAVIGATOR)->navigateTo($this->productName);
     }
@@ -58,6 +72,7 @@ class BasicNavigationTest extends AbstractMagentoTestCase
         $theme = $this->getTheme();
         $this->commandOpen($theme->getBaseUrl());
 
+        $this->overrideDefaultConfiguration();
         $this->getNavigator(DefaultSimpleProductCategory::NAVIGATOR)->navigateTo();
     }
 
@@ -79,6 +94,7 @@ class BasicNavigationTest extends AbstractMagentoTestCase
         $theme = $this->getTheme();
         $this->commandOpen($theme->getBaseUrl());
 
+        $this->overrideDefaultConfiguration();
         // The default simple category is required because the default simple product navigator does not do category navigation
         $this->getNavigator(DefaultSimpleProductCategory::NAVIGATOR)->navigateTo();
         $this->getNavigator(DefaultSimpleProduct::NAVIGATOR)->navigateTo();

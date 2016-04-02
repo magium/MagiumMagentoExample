@@ -12,6 +12,17 @@ class BasicAddToCart extends AbstractMagentoTestCase
 {
 
     /**
+     * This method exists so that any settings that need to be can be overridden by custom logic without making
+     * changes to the test as a whole.  Each test method will call this method prior to requiring the category
+     * and product information.
+     */
+
+    protected function overrideDefaultConfiguration()
+    {
+
+    }
+
+    /**
      * This test uses a class that uses a combination of navigators and actions to accomplish the add-to-cart action.
      * If this test fails check to ensure that the default product and category navigators are working.  Note that
      * Ajax-based add-to-cart operations may require additional customization of the Cart actions.
@@ -26,6 +37,7 @@ class BasicAddToCart extends AbstractMagentoTestCase
     {
         $this->getLogger()->notice('Testing add-to-cart functionality with defaults');
         $this->commandOpen($this->getTheme()->getBaseUrl());
+        $this->overrideDefaultConfiguration();
         $this->getAction(AddItemToCart::ACTION)->addSimpleItemToCartFromProductPage();
     }
     /**
@@ -37,6 +49,7 @@ class BasicAddToCart extends AbstractMagentoTestCase
     {
         $this->getLogger()->notice('Testing add-to-cart functionality with individual actions ');
         $this->commandOpen($this->getTheme()->getBaseUrl());
+        $this->overrideDefaultConfiguration();
         $this->getNavigator(DefaultSimpleProductCategory::NAVIGATOR)->navigateTo();
         $this->getNavigator(DefaultSimpleProduct::NAVIGATOR)->navigateTo();
         $this->getAction(AddSimpleProductToCart::ACTION)->execute();
