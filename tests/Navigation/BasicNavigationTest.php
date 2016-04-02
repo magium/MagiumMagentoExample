@@ -15,12 +15,20 @@ class BasicNavigationTest extends AbstractMagentoTestCase
     protected $productName = 'Blue Horizons Bracelets';
 
     /**
-     * This method exists so that the category and product names can be overridden by custom logic without making
-     * changes to the test as a whole.  Each test method will call this method prior to requiring the category
-     * and product information.
+     * This method exists so that the category can be overridden by custom logic without making changes to the test as
+     * a whole.  Each test method will call this method prior to requiring the category
      */
 
-    protected function overrideDefaultConfiguration()
+    protected function overrideDefaultCategory()
+    {
+
+    }
+    /**
+     * This method exists so that the product can be overridden by custom logic without making changes to the test as
+     * a whole.  Each test method will call this method prior to requiring the product
+     */
+
+    protected function overrideDefaultProduct()
     {
 
     }
@@ -37,7 +45,7 @@ class BasicNavigationTest extends AbstractMagentoTestCase
         $theme = $this->getTheme();
         $this->commandOpen($theme->getBaseUrl());
 
-        $this->overrideDefaultConfiguration();
+        $this->overrideDefaultCategory();
         $this->getNavigator(BaseMenu::NAVIGATOR)->navigateTo($this->categoryNavigation);
     }
 
@@ -54,8 +62,9 @@ class BasicNavigationTest extends AbstractMagentoTestCase
         $theme = $this->getTheme();
         $this->commandOpen($theme->getBaseUrl());
 
-        $this->overrideDefaultConfiguration();
+        $this->overrideDefaultCategory();
         $this->getNavigator(BaseMenu::NAVIGATOR)->navigateTo($this->categoryNavigation);
+        $this->overrideDefaultProduct();
         $this->getNavigator(Product::NAVIGATOR)->navigateTo($this->productName);
     }
 
@@ -72,7 +81,7 @@ class BasicNavigationTest extends AbstractMagentoTestCase
         $theme = $this->getTheme();
         $this->commandOpen($theme->getBaseUrl());
 
-        $this->overrideDefaultConfiguration();
+        $this->overrideDefaultCategory();
         $this->getNavigator(DefaultSimpleProductCategory::NAVIGATOR)->navigateTo();
     }
 
@@ -94,9 +103,10 @@ class BasicNavigationTest extends AbstractMagentoTestCase
         $theme = $this->getTheme();
         $this->commandOpen($theme->getBaseUrl());
 
-        $this->overrideDefaultConfiguration();
+        $this->overrideDefaultCategory();
         // The default simple category is required because the default simple product navigator does not do category navigation
         $this->getNavigator(DefaultSimpleProductCategory::NAVIGATOR)->navigateTo();
+        $this->overrideDefaultProduct();
         $this->getNavigator(DefaultSimpleProduct::NAVIGATOR)->navigateTo();
     }
 
