@@ -2,5 +2,5 @@
 
 /* @var $this \Magium\Magento\Identities\Admin */
 
-$this->username = 'admin';
+$this->account = 'admin';
 $this->password = 'Password1';
